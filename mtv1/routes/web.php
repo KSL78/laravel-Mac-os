@@ -21,3 +21,6 @@ Route::get('/home/{name?}', [HomeController::class,'index'])->name('home.index')
 Route::get('/user/{name?}', function ($name = NULL) {
     return view('user',compact('name')); // $name -> 'name'
 });
+Route ::get('/test1',function(){
+    return view('test1', ['name' => '<script>alert("1");</script>']);
+});
