@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\ProductController;
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/',[ProductController::class,'index'])->name('product.index');
 
 // Route::get('/users/{name?}', function ($name = NULL) {
 //     return 'welcome, '. $name;
